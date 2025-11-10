@@ -20,8 +20,8 @@ Aplicação web desenvolvida com Streamlit para visualizar o desempenho históri
 
 1. Clone este repositório:
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/Pedroct06/Visualisador_de_acoes_com_Streamlit.git
+cd Visualisador_de_acoes_com_Streamlit
 ```
 
 2. Instale as dependências:
