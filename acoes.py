@@ -3,9 +3,9 @@ import pandas as pd
 import yfinance as yf
 
 @st.cache_data
-def carregar_dados(empresa):
+def carregar_dados(empresa, tempo, fim):
     dados = yf.Ticker(empresa)
-    cotacoes = dados.history(start = "2024-01-01", end = "2025-10-31")
+    cotacoes = dados.history(start = tempo, end = fim)
     cotacoes = cotacoes[["Close"]]
     return cotacoes
 
@@ -14,18 +14,23 @@ st.write("""
 Grafico para ver o desempenho de ações ao longo do tempo, e sua variação         
 """)
 
+tempo = st.date_input( "Forneça o ano de início da análise")
+
+fim = st.date_input("Forneça até onde será analisado")
+
 ticker = st.text_input(
     "Digite o código da ação desejada (ex: PETR4.SA, VALE3.SA, AAPL)",
     placeholder = "Sua ação aqui."
 )
 
+
 if st.button("Buscar ação") or ticker:
-    if ticker == "":
+    if ticker == "" or tempo == "" or fim == "":
         st.warning("Código inexistente ou errado, por favor verifique!")
     else:
         try:
             with st.spinner(f"Carregando dados de {ticker}"):
-                 dados = carregar_dados(ticker)
+                 dados = carregar_dados(ticker,tempo,fim)
             if dados.empty:
                st.error("Nenhuma ação encontrada!")
             
