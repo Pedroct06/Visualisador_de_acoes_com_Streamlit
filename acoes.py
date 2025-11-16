@@ -25,8 +25,10 @@ ticker = st.text_input(
 
 
 if st.button("Buscar ação") or ticker:
-    if ticker == "" or tempo == "" or fim == "":
+    if ticker == "" or tempo == "" or fim == "" or fim < tempo:
         st.warning("Código inexistente ou errado, por favor verifique!")
+    elif fim < tempo:
+        st.warning("O periodo final não pode ser anterior ao periodo inicial")
     else:
         try:
             with st.spinner(f"Carregando dados de {ticker}"):

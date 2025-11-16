@@ -9,7 +9,6 @@ Aplicação web desenvolvida com Streamlit para visualizar o desempenho históri
 - Cálculo da variação total no período
 - Cálculo da variação percentual
 - Gráfico de linha com o histórico de preços
-- Dados do período: 01/01/2024 até 31/10/2025
 
 ## 📋 Pré-requisitos
 
@@ -43,13 +42,15 @@ streamlit run acoes.py
 
 2. O navegador abrirá automaticamente com a aplicação
 
-3. Digite o código da ação desejada no campo de texto. Exemplos:
+3. Selecione o período de tempo a ser observado
+
+4. Digite o código da ação desejada no campo de texto. Exemplos:
    - **Ações brasileiras**: PETR4.SA, VALE3.SA, ITUB4.SA, BBDC4.SA
    - **Ações americanas**: AAPL, GOOGL, MSFT, TSLA
 
-4. Clique em "Buscar ação" ou pressione Enter
+5. Clique em "Buscar ação" ou pressione Enter
 
-5. Visualize os resultados:
+6. Visualize os resultados:
    - Preço atual da ação
    - Variação total em reais
    - Variação percentual
